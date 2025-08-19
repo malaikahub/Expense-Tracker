@@ -1,0 +1,41 @@
+/* Light Theme */
+body, .app-container.light {
+  background: #fdfdfd;
+  color: #222;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Dark Theme */
+body.dark-mode, .app-container.dark {
+  background: #121212;
+  color: #f5f5f5;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Apply dark mode to all boxes and cards */
+.dark-mode .box,
+.dark-mode .card,
+.dark-mode .content-box {
+  background: #1e1e1e !important;
+  color: #f5f5f5 !important;
+  border: 1px solid #444;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Apply dark mode to images (optional filter) */
+.dark-mode img {
+  filter: brightness(0.8) contrast(1.1);
+  transition: filter 0.4s ease-in-out;
+}
+
+/* Footer styling */
+footer {
+  background: #d2b48c; /* light brown */
+  padding: 1rem;
+  text-align: center;
+}
+
+.dark-mode footer {
+  background: #2c2c2c;
+  color: #f5f5f5;
+}
