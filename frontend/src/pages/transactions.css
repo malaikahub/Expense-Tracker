@@ -1,0 +1,241 @@
+.transactions-page {
+  padding: 2rem;
+  background: var(--bg, #fff8f0); /* cream background */
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.3s, color 0.3s;
+  color: var(--text-color, #5b4033); /* dark brown text */
+}
+
+/* DARK MODE VARIABLES */
+.transactions-page.dark {
+  --bg: #1e1e1e;
+  --text-color: #eee;
+  --input-bg: #333;
+  --input-border: #555;
+  --table-bg: #2a2a2a;
+  --thead-bg: #333;
+  --btn-bg: #444;
+  --btn-hover: #555;
+}
+
+/* HEADER */
+.transactions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.transactions-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #5b4033; /* dark brown */
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.actions input[type="text"] {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1bfa1; /* light brown border */
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+  background: var(--input-bg, #fff3e0); /* cream background */
+  color: var(--text-color, #5b4033);
+  border-color: var(--input-border, #d1bfa1);
+}
+
+.actions input[type="text"]:focus {
+  border-color: #c08441; /* darker brown */
+}
+
+/* BUTTONS */
+.pay-btn,
+.export-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.pay-btn {
+  background: #c08441; /* light brown */
+  color: #fff;
+}
+
+.pay-btn:hover {
+  background: #a16207; /* darker brown */
+}
+
+.export-btn {
+  background: #fff3e0; /* cream */
+  color: #5b4033;
+}
+
+.export-btn:hover {
+  background: #ffe8cc;
+}
+
+/* DARK MODE BUTTONS */
+.transactions-page.dark .pay-btn,
+.transactions-page.dark .export-btn {
+  background: var(--btn-bg, #444);
+  color: #fff;
+}
+
+.transactions-page.dark .pay-btn:hover,
+.transactions-page.dark .export-btn:hover {
+  background: var(--btn-hover, #555);
+}
+
+/* NEW TRANSACTION FORM */
+.new-transaction-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.new-transaction-form input,
+.new-transaction-form select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1bfa1;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  background: var(--input-bg, #fff3e0);
+  color: var(--text-color, #5b4033);
+  border-color: var(--input-border, #d1bfa1);
+}
+
+.new-transaction-form input:focus,
+.new-transaction-form select:focus {
+  border-color: #c08441;
+}
+
+/* TABLE */
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--table-bg, #fff8f0); /* cream */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.transactions-table:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.transactions-table thead {
+  background: var(--thead-bg, #f5e0c3); /* light brown header */
+  text-align: left;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e5d4c3;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.transactions-table td {
+  vertical-align: middle;
+}
+
+/* STATUS */
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.status.completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.failed {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* AMOUNT */
+.amount.positive {
+  color: #16a34a;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.amount.negative {
+  color: #dc2626;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+/* VIEW LINK */
+.view-link {
+  color: #a16207; /* dark brown */
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.view-link:hover {
+  color: #c08441;
+  text-decoration: underline;
+}
+
+/* ROW HOVER ANIMATION */
+.transactions-table tbody tr {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.transactions-table tbody tr:hover {
+  transform: translateY(-3px);
+  background: rgba(192, 128, 64, 0.1);
+}
+
+/* ROW FADE IN */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .transactions-table th,
+  .transactions-table td {
+    padding: 0.5rem;
+  }
+
+  .new-transaction-form {
+    flex-direction: column;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

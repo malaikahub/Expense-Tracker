@@ -1,0 +1,390 @@
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #8b5e3c; /* warm brown */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 1000;
+  color: #fff;
+  font-weight: 600;
+}
+
+.dashboard-page {
+  padding-top: 0px; /* offset for navbar */
+  padding-left: 0px;
+  background: #fdfaf6; /* soft cream */
+}
+
+/* ---------------- HOME SECTION ---------------- */
+.dashboard-home {
+position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: url("/expense.jpg") center/cover no-repeat fixed;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+.dashboard-box home-content {
+    color:#74755f
+}
+.dashboard-home .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 234, 220, 0.65); /* creamy overlay */
+  z-index: 0;
+}
+
+.app.dark-mode .dashboard-home .overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------------- TRANSACTIONS SECTION ---------------- */
+.dashboard-transactions {
+  background: #fffaf3; /* cream base */
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.app.dark-mode .dashboard-transactions {
+  background: #1f2937;
+}
+
+/* ---------------- DASHBOARD BOX ---------------- */
+/* Full body background */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.dashboard-home {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: url("/expense.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: flex-start; /* keep navbar visible */
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* remove main box background */
+.dashboard-box {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  width: 100%;
+}
+
+/* transparent cards */
+.card, .chart-box {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 2px solid rgba(255, 255, 255, 0.3); /* optional subtle border */
+  border-radius: 16px;
+  backdrop-filter: blur(3px); /* gives glass effect */
+  color: inherit;
+}
+
+/* optional hover effect */
+.card:hover, .chart-box:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* ---------------- ROW LAYOUTS ---------------- */
+.row {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.row-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.row-2 {
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ---------------- INFO CARDS ---------------- */
+.card {
+  padding: 1.5rem;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #fff7ed, #fef3c7);
+  box-shadow: 0 5px 15px rgba(139, 94, 60, 0.12);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(139, 94, 60, 0.25);
+}
+
+.card-title {
+  color: #8b5e3c;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.card-value {
+  font-size: 1.9rem;
+  font-weight: bold;
+  color: #4b3621;
+}
+
+.app.dark-mode .card {
+  background: linear-gradient(to right, #1f2937, #111827);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.app.dark-mode .card-title {
+  color: #e5e7eb;
+}
+
+.app.dark-mode .card-value {
+  color: #f5f5f5;
+}
+
+/* ---------------- COLORS ---------------- */
+.balance { color: #8b5e3c; }
+.income { color: #16a34a; }
+.expense { color: #dc2626; }
+
+/* ---------------- CHART BOX ---------------- */
+.chart-box {
+  background: #fffaf3;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(139, 94, 60, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.chart-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(139, 94, 60, 0.25);
+}
+
+.chart-box h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #5c4033;
+}
+
+.app.dark-mode .chart-box {
+  background: rgba(31, 41, 55, 0.95);
+}
+
+.app.dark-mode .chart-box h3 {
+  color: #f5f5f5;
+}
+
+/* ---------------- TRANSACTIONS TABLE ---------------- */
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(139, 94, 60, 0.12);
+}
+
+.transactions-table thead {
+  background: #fef3c7; /* soft yellowish cream */
+  text-align: left;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  color: #4b3621;
+}
+
+.app.dark-mode .transactions-table {
+  background: #111827;
+}
+
+.app.dark-mode .transactions-table thead {
+  background: #1f2937;
+}
+
+.app.dark-mode .transactions-table th,
+.app.dark-mode .transactions-table td {
+  color: #f5f5f5;
+  border-bottom: 1px solid #374151;
+}
+
+/* Status badges */
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.status.completed { background: #d1fae5; color: #065f46; }
+.status.pending { background: #fef3c7; color: #92400e; }
+.status.failed { background: #fee2e2; color: #991b1b; }
+
+/* Amount colors */
+.amount.positive { color: #16a34a; font-weight: 600; }
+.amount.negative { color: #dc2626; font-weight: 600; }
+
+.tables-horizontal {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.table-section {
+  min-width: 300px;
+  overflow-x: auto;
+}
+
+.transactions-section {
+  flex: 2;
+}
+
+.accounts-section {
+  flex: 1;
+}
+
+.accounts-table, .transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.row-3 .card {
+  flex: 1; /* all three equal size */
+  background: transparent; /* transparent cards */
+  box-shadow: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.row-2 {
+  display: flex;
+  gap: 1rem;
+}
+
+.row-2 .graph-box {
+  flex: 2; /* double width */
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.row-2 .pie-box {
+  flex: 1; /* single width */
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+/* Table wrapper with border and animation */
+.table-wrapper {
+  overflow-x: auto;
+  border: 2px solid #cca29f; /* outer border */
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for table wrapper */
+.table-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Accounts & Transactions table */
+.accounts-table,
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Table headers */
+.accounts-table th,
+.transactions-table th {
+  background-color: #cca29f;
+  color: #fff;
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 2px solid #8b4513;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for headers */
+.accounts-table th:hover,
+.transactions-table th:hover {
+  background-color: #b07872;
+  cursor: pointer;
+}
+
+/* Table cells */
+.accounts-table td,
+.transactions-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #8b4513;
+  transition: background-color 0.3s ease;
+}
+
+/* Row hover effect */
+.accounts-table tr:hover,
+.transactions-table tr:hover {
+  background-color: rgba(204, 162, 159, 0.2);
+}
+
+/* Fade in animation for table rows */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Optional: round corners for first and last rows */
+.accounts-table tr:first-child td:first-child,
+.transactions-table tr:first-child td:first-child {
+  border-top-left-radius: 10px;
+}
+
+.accounts-table tr:first-child td:last-child,
+.transactions-table tr:first-child td:last-child {
+  border-top-right-radius: 10px;
+}
