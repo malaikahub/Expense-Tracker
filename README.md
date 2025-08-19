@@ -3,17 +3,11 @@
 A modern, responsive, and secure finance management application designed to help users track income, expenses, and manage accounts efficiently.
 
 **Project Overview**
-
 The Expense Tracker Web App allows users to monitor their finances in real-time. Users can:
-
 Track income and expenses
-
 Manage multiple accounts
-
 View dashboard summaries with graphs and charts
-
 Export transactions
-
 Enable dark mode for better user experience
 
 **Features**
